@@ -1,0 +1,13 @@
+{
+  "dataset": "telecom churn",
+  "rows": 100000,
+  "churn_rate": 0.49562,
+  "logistic_auc": 0.6307006214561256,
+  "gradient_boosting_auc": 0.6892040819641073,
+  "selected_model": "Gradient Boosting",
+  "selected_auc": 0.6892040819641073,
+  "best_campaign_threshold": 0.16999999999999998,
+  "targeted_rate": 0.98905,
+  "captured_churners": 9892,
+  "estimated_net_campaign_value": 659708.5150000436
+}

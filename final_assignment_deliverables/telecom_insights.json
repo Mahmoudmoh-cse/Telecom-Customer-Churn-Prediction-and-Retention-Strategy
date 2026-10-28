@@ -1,0 +1,204 @@
+{
+  "rows": 100000,
+  "churn_rate": 0.49562,
+  "average_monthly_revenue": 58.71998484590209,
+  "mean_revenue_non_churn": 59.21869245850767,
+  "mean_revenue_churn": 58.211073936641824,
+  "mean_change_mou_non_churn": -5.3442649742788655,
+  "mean_change_mou_churn": -22.75900260482358,
+  "mean_change_rev_non_churn": -1.4101953874250672,
+  "mean_change_rev_churn": -0.6212631604054292,
+  "mean_custcare_non_churn": 1.9825990985489512,
+  "mean_custcare_churn": 1.5956882288717364,
+  "mean_drop_blk_non_churn": 10.28656304107764,
+  "mean_drop_blk_churn": 9.797751637655564,
+  "mean_months_non_churn": 18.633074269400055,
+  "mean_months_churn": 19.038456882288852,
+  "mean_eqpdays_non_churn": 363.280924717965,
+  "mean_eqpdays_churn": 421.08952423227475,
+  "selected_auc": 0.6892040819641073,
+  "threshold": 0.17,
+  "confusion_matrix": {
+    "tn": 199,
+    "fp": 9889,
+    "fn": 20,
+    "tp": 9892
+  },
+  "precision": 0.5000758303422476,
+  "recall": 0.9979822437449556,
+  "segments": {
+    "new_cell": [
+      {
+        "value": "U",
+        "churn_rate": 0.4969513106375347,
+        "count": 66914
+      },
+      {
+        "value": "N",
+        "churn_rate": 0.49662676822633295,
+        "count": 13785
+      },
+      {
+        "value": "Y",
+        "churn_rate": 0.4902854774364023,
+        "count": 19301
+      }
+    ],
+    "dualband": [
+      {
+        "value": "N",
+        "churn_rate": 0.5368166925331954,
+        "count": 23196
+      },
+      {
+        "value": "Y",
+        "churn_rate": 0.4872621601051685,
+        "count": 72265
+      },
+      {
+        "value": "T",
+        "churn_rate": 0.42191844300278036,
+        "count": 4316
+      }
+    ],
+    "refurb_new": [
+      {
+        "value": "R",
+        "churn_rate": 0.5343606830487297,
+        "count": 14406
+      },
+      {
+        "value": "N",
+        "churn_rate": 0.48910541749909453,
+        "count": 85593
+      }
+    ],
+    "creditcd": [
+      {
+        "value": "N",
+        "churn_rate": 0.5082812399303989,
+        "count": 31034
+      },
+      {
+        "value": "Y",
+        "churn_rate": 0.49021328494511707,
+        "count": 67234
+      }
+    ],
+    "hnd_webcap": [
+      {
+        "value": "WC",
+        "churn_rate": 0.5630282453225457,
+        "count": 13843
+      },
+      {
+        "value": "WCMB",
+        "churn_rate": 0.47079872710707354,
+        "count": 75733
+      }
+    ],
+    "area": [
+      {
+        "value": "NORTHWEST/ROCKY MOUNTAIN AREA",
+        "churn_rate": 0.5690850277264325,
+        "count": 4328
+      },
+      {
+        "value": "SOUTH FLORIDA AREA",
+        "churn_rate": 0.5336134453781513,
+        "count": 3332
+      },
+      {
+        "value": "CALIFORNIA NORTH AREA",
+        "churn_rate": 0.5210553018772197,
+        "count": 5913
+      },
+      {
+        "value": "NORTH FLORIDA AREA",
+        "churn_rate": 0.52,
+        "count": 4350
+      },
+      {
+        "value": "NEW ENGLAND AREA",
+        "churn_rate": 0.5174247982391783,
+        "count": 5452
+      }
+    ]
+  },
+  "top_permutation_importance": [
+    {
+      "feature": "months",
+      "auc_drop": 0.03583847553313213
+    },
+    {
+      "feature": "eqpdays",
+      "auc_drop": 0.031625435289557524
+    },
+    {
+      "feature": "change_mou",
+      "auc_drop": 0.0271538158561061
+    },
+    {
+      "feature": "mou_Mean",
+      "auc_drop": 0.026027720989553194
+    },
+    {
+      "feature": "avgqty",
+      "auc_drop": 0.012957468224643942
+    },
+    {
+      "feature": "hnd_price",
+      "auc_drop": 0.011988671530656303
+    },
+    {
+      "feature": "totmrc_Mean",
+      "auc_drop": 0.009693968777938378
+    },
+    {
+      "feature": "uniqsubs",
+      "auc_drop": 0.0058943051309463534
+    },
+    {
+      "feature": "drop_vce_Mean",
+      "auc_drop": 0.005400904026858333
+    },
+    {
+      "feature": "change_rev",
+      "auc_drop": 0.004046989390500855
+    }
+  ],
+  "risk_tiers": [
+    {
+      "top_percent": 0.1,
+      "customers": 2000,
+      "churn_rate": 0.783,
+      "lift": 1.579903147699758,
+      "actual_churn_customers": 1566,
+      "average_revenue": 53.375629639014676
+    },
+    {
+      "top_percent": 0.2,
+      "customers": 4000,
+      "churn_rate": 0.7285,
+      "lift": 1.4699354317998388,
+      "actual_churn_customers": 2914,
+      "average_revenue": 56.25883333334585
+    },
+    {
+      "top_percent": 0.3,
+      "customers": 6000,
+      "churn_rate": 0.6893333333333334,
+      "lift": 1.3909066451439334,
+      "actual_churn_customers": 4136,
+      "average_revenue": 56.15564884643924
+    },
+    {
+      "top_percent": 0.5,
+      "customers": 10000,
+      "churn_rate": 0.6288,
+      "lift": 1.268765133171913,
+      "actual_churn_customers": 6288,
+      "average_revenue": 56.69820500586298
+    }
+  ]
+}

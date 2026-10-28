@@ -1,0 +1,6 @@
+﻿"Source","Title","URL","Use"
+"Assignment dataset","Telecom Client.csv","local:data/telecom/Client.csv","Customer demographics, account profile, handset and household variables"
+"Assignment dataset","Telecom Record.csv","local:data/telecom/Record.csv","Usage, revenue, call-quality, customer-care and churn target variables"
+"Business concept","Customer churn prediction","https://en.wikipedia.org/wiki/Customer_attrition","Definition and business framing for churn/attrition"
+"Model evaluation","ROC curve and AUC","https://scikit-learn.org/stable/modules/model_evaluation.html#roc-metrics","AUC metric definition and evaluation framing"
+"Implementation","scikit-learn user guide","https://scikit-learn.org/stable/user_guide.html","Preprocessing, logistic regression, and gradient boosting implementation"

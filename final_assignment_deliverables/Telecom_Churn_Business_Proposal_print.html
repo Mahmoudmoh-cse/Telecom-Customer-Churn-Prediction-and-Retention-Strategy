@@ -1,0 +1,61 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Telecom Churn Proposal</title>
+<style>@page{size:16in 9in;margin:0}body{margin:0;font-family:Aptos,Arial,sans-serif;background:#f5f7fa;color:#17202a}section{width:16in;height:9in;box-sizing:border-box;page-break-after:always;padding:.7in .85in;background:white;position:relative}section:before{content:"";position:absolute;left:0;right:0;top:0;height:.42in;background:#14313F}h1{margin:.2in 0 .32in 0;font-size:32pt;color:#14313F}ul{font-size:21pt;line-height:1.34;max-width:13in}li{margin-bottom:.18in}</style>
+</head><body><section><h1>AI Churn Prevention for a Telecom Operator</h1><ul><li>Goal: predict which customers are most likely to leave and prioritize retention actions.</li>
+<li>Data: Client.csv and Record.csv joined by Customer_ID.</li>
+<li>Recommendation: use risk tiers, not a one-size-fits-all discount campaign.</li></ul></section>
+<section><h1>Executive Summary</h1><ul><li>The dataset contains 100,000 customers and the observed churn rate is 49.6%.</li>
+<li>Gradient boosting performs best with validation AUC 0.689.</li>
+<li>The top 10% highest-risk customers churn at 78.3%, which is 1.58 times the average rate.</li>
+<li>The model should drive a tiered retention program: human contact for highest risk, low-cost outreach for medium risk.</li></ul></section>
+<section><h1>Dataset Used</h1><ul><li>Client.csv contains account profile, household, handset, credit and demographic variables.</li>
+<li>Record.csv contains usage, revenue, call quality, customer care and the churn target.</li>
+<li>The two tables are merged one-to-one by Customer_ID.</li>
+<li>Target variable: churn, where 1 means the customer left.</li></ul></section>
+<section><h1>Current Churn Problem</h1><ul><li>Churn is close to one customer in two, so retention is a material revenue issue.</li>
+<li>Average monthly revenue is 58.7.</li>
+<li>Customers who churn show a larger decline in minutes of use: -22.8 versus -5.3 for customers who stay.</li>
+<li>Customers who churn have older equipment on average: 421 days versus 363 days.</li></ul></section>
+<section><h1>Important Signals</h1><ul><li>The strongest model signals are: months, eqpdays, change_mou, mou_Mean, avgqty, hnd_price.</li>
+<li>Usage decline is a useful warning sign before churn.</li>
+<li>Equipment age matters, suggesting handset upgrade offers may reduce churn.</li>
+<li>Some customer groups and regions have meaningfully higher churn rates.</li></ul></section>
+<section><h1>Modeling Approach</h1><ul><li>Baseline model: logistic regression with imputation, scaling and categorical encoding.</li>
+<li>Main model: histogram gradient boosting to capture nonlinear churn patterns.</li>
+<li>Validation method: stratified 80/20 train-validation split.</li>
+<li>Metric: ROC-AUC, which measures how well the model ranks churn risk.</li></ul></section>
+<section><h1>Model Output</h1><ul><li>Logistic regression AUC: 0.631.</li>
+<li>Gradient boosting AUC: 0.689.</li>
+<li>Selected model: gradient boosting.</li>
+<li>The output is a churn risk score for each customer, not an automatic decision.</li></ul></section>
+<section><h1>Risk Tier Results</h1><ul><li>Top 10% risk tier: 78.3% churn rate, 1566 churn customers in validation.</li>
+<li>Top 20% risk tier: 72.9% churn rate, 2914 churn customers in validation.</li>
+<li>This lift makes retention targeting more efficient than contacting customers randomly.</li>
+<li>Use top-tier scores for costly offers; use lower-cost messaging for wider groups.</li></ul></section>
+<section><h1>Threshold Simulation</h1><ul><li>A broad threshold of 0.17 captures 99.8% of churn cases but targets almost all customers.</li>
+<li>Precision at that threshold is 50.0%, close to the base churn rate.</li>
+<li>Business interpretation: the threshold is useful as an early-warning flag, not as a universal discount rule.</li>
+<li>The practical policy should be tiered by score and customer value.</li></ul></section>
+<section><h1>Retention Policy</h1><ul><li>High risk + high revenue: retention specialist call and personalized offer.</li>
+<li>High risk + old handset: upgrade or device financing offer.</li>
+<li>High risk + usage decline: proactive service check and plan review.</li>
+<li>Medium risk: low-cost SMS/app campaign; low risk: monitor only.</li></ul></section>
+<section><h1>Financial Impact</h1><ul><li>The campaign simulation estimates net value of 659,709 on the validation sample.</li>
+<li>Assumptions: 25% successful retention among true churn cases, six months of retained revenue and offer cost of 10 per contacted customer.</li>
+<li>The final business case should update these assumptions with actual campaign cost and customer lifetime value.</li>
+<li>The model gives a measurable way to compare retained revenue against offer spend.</li></ul></section>
+<section><h1>Operational Workflow</h1><ul><li>1. Score customers weekly or monthly using latest usage and service data.</li>
+<li>2. Segment customers into high, medium and low churn risk.</li>
+<li>3. Match action type to risk, revenue and churn reason.</li>
+<li>4. Track acceptance, retained revenue and churn outcome for model refresh.</li></ul></section>
+<section><h1>Risks And Controls</h1><ul><li>Do not treat the score as a final customer decision.</li>
+<li>Monitor churn rate, campaign ROI, contact rate and customer complaints.</li>
+<li>Avoid training on future information after churn is already known.</li>
+<li>Retrain after new campaign outcomes are collected.</li></ul></section>
+<section><h1>Quotation</h1><ul><li>Churn scoring system implementation: 60,000.</li>
+<li>Monthly monitoring, retraining and reporting: 4,000.</li>
+<li>Optional performance fee: tied to verified retained revenue.</li>
+<li>The pricing is justified by recurring revenue protected through targeted retention.</li></ul></section>
+<section><h1>Recommendation</h1><ul><li>Adopt the gradient boosting churn score as a retention decision-support tool.</li>
+<li>Start with the top 10% to 20% risk tiers because they have the clearest lift.</li>
+<li>Use the first campaign to measure true offer cost, success rate and retained revenue.</li>
+<li>Then retrain the model and scale the program.</li></ul></section></body></html>

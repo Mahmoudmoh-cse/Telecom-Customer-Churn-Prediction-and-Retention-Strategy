@@ -1,0 +1,27 @@
+# Virtual Environment
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter
+.ipynb_checkpoints/
+.jupyter_runtime/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# System & IDE files
+.agents/
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+
+# Scratch
+scratch/
